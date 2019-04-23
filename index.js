@@ -4,7 +4,7 @@ const convert = require('xml-js')
 const randomstring = require('randomstring')
 
 // -------------------------------------------------------------------------- //
-THIS_SCRIPT_DIRECTORY = process.cwd()
+THIS_SCRIPT_DIRECTORY = __dirname
 XML_JS_CONFIG = { compact: false, spaces: 4 }
 TEMP_DIRECTORY_NAME = randomstring.generate()
 
