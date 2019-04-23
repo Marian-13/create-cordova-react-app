@@ -31,17 +31,17 @@ Node.js, Java, Gradle, Android, Cordova.
 
 To install them you can use the following commands:
 ```
-$ git clone https://github.com/Marian-13/bash-scripts
-$ cd bash-scripts
-$ sudo bash ~/bash-scripts/cordova_android_dev_env.sh
+$ git clone https://github.com/Marian-13/bash-scripts && cd bash-scripts || cd bash-scripts && git pull
+$ source cordova_android_dev_env.sh && cd
 ```
 Feel free to modify `~/bash-scripts/cordova_android_dev_env.sh` to customize it for your own needs.
 
 ## Installation
 ```
-$ git clone https://github.com/Marian-13/create-cordova-react-app
+$ git clone https://github.com/Marian-13/create-cordova-react-app && cd create-cordova-react-app || cd create-cordova-react-app && git pull
 $ cat ~/.profile | grep 'alias create-cordova-react-app="node ~/create-cordova-react-app/index.js"' || echo 'alias create-cordova-react-app="node ~/create-cordova-react-app/index.js"' >> ~/.profile
-$ source ~/.profile
+$ npm install
+$ source ~/.profile && cd
 ```
 
 ## Notes
