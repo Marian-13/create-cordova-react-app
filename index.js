@@ -231,8 +231,12 @@ function generatePackageJSON() {
   logDone()
 }
 
+function yarnLockExists() {
+  return fs.existsSync(`${tempReactAppDirectory()}/yarn.lock`)
+}
+
 function removeYarnLock() {
-  exec(`rm ${tempReactAppDirectory()}/yarn.lock`)
+  if (yarnLockExists()) exec(`rm ${tempReactAppDirectory()}/yarn.lock`)
 
   logDone()
 }
