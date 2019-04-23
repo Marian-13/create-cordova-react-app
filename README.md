@@ -32,7 +32,8 @@ Node.js, Java, Gradle, Android, Cordova.
 To install them you can use the following commands:
 ```
 $ git clone https://github.com/Marian-13/bash-scripts
-$ source ~/bash-scripts/cordova_android_dev_env.sh
+$ cd bash-scripts
+$ sudo bash ~/bash-scripts/cordova_android_dev_env.sh
 ```
 Feel free to modify `~/bash-scripts/cordova_android_dev_env.sh` to customize it for your own needs.
 
