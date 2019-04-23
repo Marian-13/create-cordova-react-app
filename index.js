@@ -4,6 +4,8 @@ const convert = require('xml-js')
 const randomstring = require('randomstring')
 
 // -------------------------------------------------------------------------- //
+
+CURRENT_WORKING_DIRECTORY = process.cwd()
 THIS_SCRIPT_DIRECTORY = __dirname
 XML_JS_CONFIG = { compact: false, spaces: 4 }
 TEMP_DIRECTORY_NAME = randomstring.generate()
@@ -25,7 +27,7 @@ function path() {
 }
 
 function appDirectory() {
-  return `${THIS_SCRIPT_DIRECTORY}/${appName()}`;
+  return `${CURRENT_WORKING_DIRECTORY}/${appName()}`;
 }
 
 function appDirectoryExists() {
@@ -82,8 +84,8 @@ function removeTempDirectory() {
   execSync(`rm -rf ${tempDirectory()}`)
 }
 
-function cdToThisScriptDirectory() {
-  process.chdir(THIS_SCRIPT_DIRECTORY)
+function cdToCurrentWorkingDirectory() {
+  process.chdir(CURRENT_WORKING_DIRECTORY)
 }
 
 function cdToTempDirectory() {
@@ -168,7 +170,7 @@ function inTempDirectory(func) {
 
   func()
 
-  cdToThisScriptDirectory()
+  cdToCurrentWorkingDirectory()
 }
 
 function inTempReactAppDirectory(func) {
@@ -176,7 +178,7 @@ function inTempReactAppDirectory(func) {
 
   func()
 
-  cdToThisScriptDirectory()
+  cdToCurrentWorkingDirectory()
 }
 
 function createCordovaApp() {
@@ -348,7 +350,7 @@ function createAppDirectory() {
 }
 
 function moveTempReactAppDirectoryContentToAppDirectory() {
-  exec(`mv ${tempReactAppDirectory()}/* ${appName()}`)
+  exec(`mv ${tempReactAppDirectory()}/* ${appDirectory()}`)
 
   logDone()
 }
