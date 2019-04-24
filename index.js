@@ -400,6 +400,10 @@ function printDescription() {
 
 // -------------------------------------------------------------------------- //
 
+process.on('SIGINT', () => {
+  if (tempDirectoryExists()) removeTempDirectory()
+});
+
 try {
   if (help()) {
     printDescription()
